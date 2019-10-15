@@ -35,65 +35,60 @@ class Component extends React.Component {
           window.location.href = '/';
         }, 1000);
       } else {
-        alert('password dan email salah');
+        alert('password  email salah');
       }
     }
   };
   render() {
     const { classes } = this.props;
     return (
-      <Card className={classes.Card}>
-        {/* <CardContent className={classes.CardContent}> */}
+      <div>
         <Typography className={classes.title}>Login</Typography>
-        {/* </CardContent> */}
-        <CardContent className={classes.CardContent}>
-          <List>
-            <ListItem>
-              <Input
-                label="email"
-                id="txtEmail"
-                className={classes.textField}
-                margin="normal"
-                // id="txtEmail"
-                placeholder="Your email..."
-                className={classes.input}
-                inputProps={{
-                  'aria-label': 'description'
-                }}
-                startAdornment={
-                  <InputAdornment position="start">
-                    <PersonRoundedIcon />
-                  </InputAdornment>
-                }
-              />
-            </ListItem>
-            <ListItem>
-              <Input
-                label="password"
-                id="txtPass"
-                className={classes.textField}
-                margin="normal"
-                // id="txtPassword"
-                placeholder="your password goes here..."
-                className={classes.input}
-                inputProps={{
-                  'aria-label': 'description'
-                }}
-                startAdornment={
-                  <InputAdornment position="start">
-                    <MailIcon />
-                  </InputAdornment>
-                }
-              />
-            </ListItem>
-          </List>
-        </CardContent>
-        <CardActions>
-          <Button onClick={this.handleLogin} className={classes.ButtonLogin}>
-            Login
-          </Button>
-        </CardActions>
-      </Card>
+
+        <List>
+          <ListItem>
+            <Input
+              label="email"
+              id="txtEmail"
+              className={classes.textField}
+              margin="normal"
+              // id="txtEmail"
+              placeholder="Your email..."
+              className={classes.input}
+              inputProps={{
+                'aria-label': 'description'
+              }}
+              startAdornment={
+                <InputAdornment position="start">
+                  <PersonRoundedIcon />
+                </InputAdornment>
+              }
+            />
+          </ListItem>
+          <ListItem>
+            <Input
+              label="password"
+              id="txtPass"
+              className={classes.textField}
+              margin="normal"
+              // id="txtPassword"
+              placeholder="your password goes here..."
+              className={classes.input}
+              inputProps={{
+                'aria-label': 'description'
+              }}
+              startAdornment={
+                <InputAdornment position="start">
+                  <MailIcon />
+                </InputAdornment>
+              }
+            />
+          </ListItem>
+        </List>
+        <Button onClick={this.handleLogin} className={classes.ButtonLogin}>
+          Login
+        </Button>
+      </div>
     );
   }
 }
