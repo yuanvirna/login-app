@@ -1,22 +1,19 @@
 const style = {
-  Card: {
-    maxHeight: 600,
-    maxWidth: 340,
-    width: '100%',
-    margin: 'auto',
-    marginTop: 120
+  root: {
+    marginTop: 20,
+    justifyContent: 'center',
+    // width: '49.95%',
+    // marginTop: 30,
+    // height: '100px',
+    // width: 500,
+    // height: '700px',
+    display: 'flex'
   },
   title: {
-    // marginLeft: 50,
-    marginTop: 30,
-    justifyContent: 'center',
-    display: 'flex'
+    margin: 'auto'
   },
-  CardContent: {
-    marginLeft: 10,
-    // marginTop: 20,
-    justifyContent: 'center',
-    display: 'flex'
+  textField: {
+    margin: 'auto'
   },
   ButtonLogin: {
     margin: 'auto'
