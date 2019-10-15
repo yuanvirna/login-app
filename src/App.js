@@ -1,26 +1,56 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import { Switch, Route, Redirect } from 'react-router-dom';
+import Dashboard from './container/dashboard';
+import HomePage from './container/HomePage';
+import SignUp from './container/SignUp';
+import Login from './container/login';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    isLoading: true,
+    isLogin: false
+  };
+  componentDidMount() {
+    const checkStatusFromStorage = localStorage.getItem('sudah login');
+    if (checkStatusFromStorage === null) {
+      this.setState({
+        isLogin: false
+      });
+    } else {
+      this.setState({
+        isLogin: true
+      });
+    }
+  }
+
+  render() {
+    if (this.state.isLogin === true) {
+      return (
+        <div>
+          <Switch>
+            <Route path="/dashboard" exact component={Dashboard} />
+            <Route path="/" exact component={HomePage} />
+            <Route path="/login" exact component={Login} />
+            <Route path="/signup" exact component={SignUp} />
+          </Switch>
+          <Redirect to="/dashboard" />
+          {/* <Redirect to="/" /> */}
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <Switch>
+            <Route path="/dashboard" exact component={Dashboard} />
+            <Route path="/" exact component={HomePage} />
+            <Route path="/login" exact component={Login} />
+            <Route path="/signup" exact component={SignUp} />
+          </Switch>
+          <Redirect to="/login" />
+        </div>
+      );
+    }
+  }
 }
 
 export default App;
