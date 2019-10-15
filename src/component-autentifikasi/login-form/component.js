@@ -35,7 +35,7 @@ class Component extends React.Component {
           window.location.href = '/';
         }, 1000);
       } else {
-        alert('password dan email salah');
+        alert('password atau email salah');
       }
     }
   };
