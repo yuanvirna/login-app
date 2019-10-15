@@ -1,21 +1,35 @@
 const style = {
   root: {
-    marginTop: 20,
-    justifyContent: 'center',
-    // width: '49.95%',
-    // marginTop: 30,
-    // height: '100px',
-    // width: 500,
-    // height: '700px',
-    display: 'flex'
+    margin: 'auto',
+    height: '100vh',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   title: {
-    margin: 'auto'
+    margin: 'auto',
+    display: 'flex',
+    justifyContent: 'center',
+    color: 'red',
+    height: 30,
+    marginTop: 10
   },
-  textField: {
+  Paper: {
     margin: 'auto'
   },
   ButtonLogin: {
+    margin: 'auto',
+    // color: '#1e88e5'
+    display: 'flex'
+  },
+  inputShowPassword: {
+    // color: 'red',
+    margin: 'auto',
+    marginTop: 12
+  },
+  textFieldPassword: {
+    color: 'red',
+    marginTop: 12,
     margin: 'auto'
   }
 };
