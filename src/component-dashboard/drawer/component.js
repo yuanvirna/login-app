@@ -1,62 +1,80 @@
 import React from 'react';
+import clsx from 'clsx';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
-
+import CssBaseline from '@material-ui/core/CssBaseline';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
 import List from '@material-ui/core/List';
-
+import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
-import ListItem from '@material-ui/core/ListItem';
-import EqualizerIcon from '@material-ui/icons/Equalizer';
-import TableChartIcon from '@material-ui/icons/TableChart';
-import AccountCircleIcon from '@material-ui/icons/AccountCircle';
-import ListItemText from '@material-ui/core/ListItemText';
-import { ListItemIcon } from '@material-ui/core';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+import { useStyle } from './style';
+import { ListItem, ListItemIcon, Button } from '@material-ui/core';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
-class component extends React.Component {
-  render() {
-    const { classes } = this.props;
-    return (
-      <div>
-        <Drawer
-          variant="permanent"
-          classes={{
-            paper: classes.drawerPaper
-          }}
-          // anchor="left"
-        >
-          <div className={classes.toolbar} />
-          <Divider />
-          <List className={classes.List}>
-            <ListItem className={classes.ListItem}>
-              <ListItem button>
-                <ListItemIcon className={classes.icon}>
-                  <AccountCircleIcon />
-                </ListItemIcon>
-                <ListItemText>
-                  <a href="/">My Account</a>
-                </ListItemText>
-              </ListItem>
-            </ListItem>
-            <ListItem className={classes.ListItem}>
-              <ListItem button>
-                <ListItemIcon className={classes.icon}>
-                  <EqualizerIcon />
-                </ListItemIcon>
-                <ListItemText>Chart</ListItemText>
-              </ListItem>
-            </ListItem>
-            <ListItem className={classes.ListItem}>
-              <ListItem button>
-                <ListItemIcon className={classes.icon}>
-                  <TableChartIcon />
-                </ListItemIcon>
-                <ListItemText>Table</ListItemText>
-              </ListItem>
-            </ListItem>
-          </List>
-        </Drawer>
-      </div>
-    );
-  }
+function ResponsiveDrawer() {
+  const theme = useTheme();
+  const [open, setOpen] = React.useState(false);
+
+  const handleDrawerOpen = () => {
+    setOpen(true);
+  };
+
+  const handleDrawerClose = () => {
+    setOpen(false);
+  };
+  const handlelogout = () => {
+    localStorage.removeItem('sudah login');
+    setTimeout(() => {
+      window.location.href = '/login';
+    }, 500);
+  };
+  return (
+    <div>
+      <CssBaseline />
+      <AppBar position="fixed">
+        <Toolbar>
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            onClick={handleDrawerOpen}
+            edge="start"
+            // className={classes.IconButton}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Typography>Dashboard Responsive</Typography>
+        </Toolbar>
+      </AppBar>
+      <Drawer variant="persistent" anchor="left" open={open}>
+        <div>
+          <IconButton onClick={handleDrawerClose}>
+            {theme.direction === 'ltr' ? (
+              <ChevronLeftIcon />
+            ) : (
+              <ChevronRightIcon />
+            )}
+          </IconButton>
+        </div>
+        <Divider />
+        <List></List>
+        <Divider />
+        <List>
+          <ListItem>
+            <Button onClick={handlelogout}>
+              Log out
+              <ListItemIcon>
+                <ExitToAppIcon />
+              </ListItemIcon>
+            </Button>
+          </ListItem>
+        </List>
+      </Drawer>
+    </div>
+  );
 }
-
-export default component;
+export default ResponsiveDrawer;

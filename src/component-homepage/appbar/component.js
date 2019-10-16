@@ -15,7 +15,6 @@ class component extends React.Component {
             <p />
           </a>
           <Typography className={classes.titleLogo}>
-            {' '}
             Click the Logo and Go To Dashboard
           </Typography>
         </Toolbar>

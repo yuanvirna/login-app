@@ -1,5 +1,5 @@
-const Styles = {
-  drawerPaper: {
+const useStyle = {
+  IconButton: {
     marginTop: 50,
     backgroundColor: 'black'
   },
@@ -16,4 +16,4 @@ const Styles = {
     color: 'white'
   }
 };
-export default Styles;
+export default useStyle;

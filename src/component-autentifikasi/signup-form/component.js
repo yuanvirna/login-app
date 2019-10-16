@@ -11,7 +11,7 @@ import PersonAddIcon from '@material-ui/icons/PersonAdd';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import RoomIcon from '@material-ui/icons/Room';
 import FormatAlignLeftIcon from '@material-ui/icons/FormatAlignLeft';
-import ButtonSave from '../../SaveButton';
+// import ButtonSave from '../../SaveButton';
 import MailIcon from '@material-ui/icons/Mail';
 
 class component extends React.Component {
@@ -102,11 +102,7 @@ class component extends React.Component {
             </ListItem>
           </List>
         </CardContent>
-        <CardActions>
-          <ButtonSave
-          //  onClick={this.handleSubmit()}
-          />
-        </CardActions>
+        <CardActions></CardActions>
       </Card>
     );
   }
