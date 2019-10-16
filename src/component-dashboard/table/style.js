@@ -5,17 +5,9 @@ const Styles = {
   },
   TableCellManage: {
     // margin: 'auto',
-    marginRight: 120,
-    display: 'flex',
-    justifyContent: 'center'
-    // display: 'flex'
   },
-  TableCellPrice: {
-    // justifyContent: 'center',
-    // display: 'flex'
-  },
-  Grid: {
-    marginLeft: 370
+  ListItemIcon: {
+    margin: 'auto'
   }
 };
 export default Styles;

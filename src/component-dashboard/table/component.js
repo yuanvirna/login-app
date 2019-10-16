@@ -8,7 +8,9 @@ import {
   TableRow,
   TableCell,
   TableBody,
-  GridListTileBar
+  GridListTileBar,
+  List,
+  ListItemIcon
 } from '@material-ui/core';
 import Axios from 'axios';
 class component extends React.Component {
@@ -26,14 +28,12 @@ class component extends React.Component {
           <TableRow>
             <TableCell></TableCell>
             <TableCell>
-              <Grid container spacing={0} className={classes.Grid}>
-                <Grid item>
+              <List>
+                <ListItemIcon className={classes.ListItemIcon}>
                   <ButtonAdd />
-                </Grid>
-                <Grid item>
                   <ButtonDelete />
-                </Grid>
-              </Grid>
+                </ListItemIcon>
+              </List>
             </TableCell>
           </TableRow>
         </TableBody>

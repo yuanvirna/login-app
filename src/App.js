@@ -22,34 +22,19 @@ class App extends Component {
       });
     }
   }
-
   render() {
-    if (this.state.isLogin === true) {
-      return (
-        <div>
-          <Switch>
+    return (
+      <div>
+        <Switch>
+          {this.state.isLogin === true && (
             <Route path="/dashboard" exact component={Dashboard} />
-            <Route path="/" exact component={HomePage} />
-            <Route path="/login" exact component={Login} />
-            <Route path="/signup" exact component={SignUp} />
-          </Switch>
-          <Redirect to="/dashboard" />
-          {/* <Redirect to="/" /> */}
-        </div>
-      );
-    } else {
-      return (
-        <div>
-          <Switch>
-            <Route path="/dashboard" exact component={Dashboard} />
-            <Route path="/" exact component={HomePage} />
-            <Route path="/login" exact component={Login} />
-            <Route path="/signup" exact component={SignUp} />
-          </Switch>
-          <Redirect to="/login" />
-        </div>
-      );
-    }
+          )}
+          <Route path="/" exact component={HomePage} />
+          <Route path="/login" exact component={Login} />
+          <Route path="/signup" exact component={SignUp} />
+        </Switch>
+      </div>
+    );
   }
 }
 
