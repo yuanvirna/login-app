@@ -15,6 +15,8 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import { useStyle } from './style';
 import { ListItem, ListItemIcon, Button } from '@material-ui/core';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import AccountCircleSharpIcon from '@material-ui/icons/AccountCircleSharp';
+import HomeSharpIcon from '@material-ui/icons/HomeSharp';
 
 function ResponsiveDrawer() {
   const theme = useTheme();
@@ -65,11 +67,31 @@ function ResponsiveDrawer() {
         <Divider />
         <List>
           <ListItem>
+            <Button href="/profile">
+              <ListItemIcon>
+                <AccountCircleSharpIcon />
+              </ListItemIcon>
+              My Profile
+            </Button>
+          </ListItem>
+        </List>
+        <List>
+          <ListItem>
+            <Button href="/">
+              <ListItemIcon>
+                <HomeSharpIcon />
+              </ListItemIcon>
+              Go To HomePage
+            </Button>
+          </ListItem>
+        </List>
+        <List>
+          <ListItem>
             <Button onClick={handlelogout}>
-              Log out
               <ListItemIcon>
                 <ExitToAppIcon />
               </ListItemIcon>
+              Log out
             </Button>
           </ListItem>
         </List>

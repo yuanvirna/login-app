@@ -4,10 +4,14 @@ const Styles = {
     marginTop: 90
   },
   TableCellManage: {
-    // margin: 'auto',
+    margin: 'auto',
+    display: 'flex',
+    justifyContent: 'center'
   },
   ListItemIcon: {
-    margin: 'auto'
+    margin: 'auto',
+    justifyContent: 'center',
+    display: 'flex'
   }
 };
 export default Styles;
