@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppBar, Typography } from '@material-ui/core';
+import { AppBar, Typography, Button } from '@material-ui/core';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -14,9 +14,11 @@ class component extends React.Component {
             <img src={LogoImage} className={classes.LogoImage} />
             <p />
           </a>
-          <Typography className={classes.titleLogo}>
-            Click the Logo and Go To Dashboard
-          </Typography>
+          {this.isLogin === true && (
+            <Button href="/login" className={classes.titleLogo}>
+              Login
+            </Button>
+          )}
         </Toolbar>
       </AppBar>
     );
