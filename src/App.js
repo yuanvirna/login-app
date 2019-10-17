@@ -27,13 +27,15 @@ class App extends Component {
       <div>
         {this.state.isLogin === true ? (
           <Switch>
-            <Route path="/" exact component={HomePage}></Route>
+            <Route path="/" exact component={HomePage} />
+            <Route path="/profile" exact component={Profile} />
             <Route path="/dashboard" exact component={Dashboard}></Route>
             <Redirect to="/dashboard" />
           </Switch>
         ) : (
           <Switch>
             <Route path="/" exact component={HomePage}></Route>
+            <Route path="/profile" exact component={Profile}></Route>
             <Route path="/login" exact component={Login}></Route>
             <Redirect to="/login" />
           </Switch>
