@@ -14,7 +14,7 @@ const Styles = {
     marginTop: 210
   },
   titleLogo: {
-    color: 'black'
+    color: '#4dd0e1'
   }
 };
 export default Styles;

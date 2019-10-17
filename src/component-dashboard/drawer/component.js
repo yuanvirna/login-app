@@ -32,7 +32,7 @@ function ResponsiveDrawer() {
   const handlelogout = () => {
     localStorage.removeItem('sudah login');
     setTimeout(() => {
-      window.location.href = '/login';
+      window.location.href = '/';
     }, 500);
   };
   return (
